@@ -8,3 +8,9 @@ angular.module('myApp', []).controller('namesCtrl', function($scope) {
         {name:'Kai',country:'Denmark'}
     ];
 });
+
+angular.module('goodsApp', []).controller('goodsCtrl',function($scope,$http) {
+	$http.get('getItem.php').success(function(data) {
+		$scope.kitchen_goods = data;
+	});
+});
