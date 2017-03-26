@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bartender_Application</string>
+    <string name="welcome_text">Welcome Bartender!</string>
+    <string name="button_orders">Bar Orders</string>
+    <string name="order_text">Current Orders:</string>
+    <string name="create_order">CREATE ORDERS</string>
+    <string name="out_of">Out of Ingredients</string>
+    <string name="problem">Problem</string>
+    <string name="problem_prompt">What is the problem?</string>
+    <string name="notify">Notify</string>
+</resources>

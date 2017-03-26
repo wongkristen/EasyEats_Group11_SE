@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="order_queue">
+        <item>Coca Cola</item>
+        <item>Dr. Pepper Cherry</item>
+        <item>Gin</item>
+        <item>Miller Lite</item>
+        <item>Tonic Water</item>
+    </string-array>
+</resources>

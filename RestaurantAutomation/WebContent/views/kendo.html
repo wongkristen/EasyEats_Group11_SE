@@ -13,11 +13,19 @@
 				<div class="demo-section k-content" style="text-align: center;">
              <h4>Pick a date</h4>
              <div id="calendar"></div>
+
         </div>
             <script>
-                $(document).ready(function() {
+
                     // create Calendar from div HTML element
-                    $("#calendar").kendoCalendar();
-                });
+                   $("#calendar").kendoCalendar({
+                	   value: new Date(2000, 10, 1),
+                       dates: [
+                           new Date(2000, 10, 10, 10, 0, 0),
+                           new Date(2000, 10, 10, 30, 0)
+                       ] //can manipulate month template depending on this array.
+					});
+
+
             </script>
         </div>

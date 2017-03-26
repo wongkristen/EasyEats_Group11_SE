@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="order_queue">
+        <item>Apples</item>
+        <item>Bacon</item>
+        <item>Cheese</item>
+        <item>Chicken</item>
+        <item>Eggs</item>
+        <item>Potatoes</item>
+        <item>Tomato Sauce</item>
+    </string-array>
+</resources>
