@@ -1,10 +1,118 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Inventory Management</title>
-</head>
-<body>
+<div>
+<h2 id="hello">Hello Manager</h2>
+<button id="hello" ng-click="goToInventory()">Inventory</button>
+</div>
 
-</body>
-</html>
+<div class="col-sm-10">
+
+<div class="col-sm-6" ng-controller="inventoryController" ng-init="displayData()">
+<p>Perishables</p>
+<div style="height:30%;overflow:auto;">
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		
+		<tr ng-repeat="x in names track by $index">
+			<td>{{x.name}}</td>
+			<td>{{x.quantity}}</td>
+			<td><button ng-click="updateData(x.id, x.name, x.quantity)" class="btn btn-info btn-xs">Update</button></td>
+			<td><button ng-click="deleteData(x.id)" class="btn btn-danger btn-xs">Delete</button></td>
+		</tr>
+	</table>
+</div>
+<form>
+	Name: <input type="text" ng-model="name" name="Name">
+	Quantity: <input type="text" ng-model="quantity" name="Quantity">
+	<input type="hidden" ng-model="id" />
+	<input type="Submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}">
+</form> 
+</div>
+
+<div class="col-sm-6" ng-controller="inventoryController" ng-init="displayDataNon()">
+<p>Non-Perishables</p>
+<div style="height:30%;overflow:auto;">
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		
+		<tr ng-repeat="x in names track by $index">
+			<td>{{x.name}}</td>
+			<td>{{x.quantity}}</td>
+			<td><button ng-click="updateDataNon(x.id, x.name, x.quantity)" class="btn btn-info btn-xs">Update</button></td>
+			<td><button ng-click="deleteDataNon(x.id)" class="btn btn-danger btn-xs">Delete</button></td>
+		</tr>
+	</table>
+</div>
+<form>
+	Name: <input type="text" ng-model="name" name="Name">
+	Quantity: <input type="text" ng-model="quantity" name="Quantity">
+	<input type="hidden" ng-model="id" />
+	<input type="Submit" name="btnInsert" class="btn btn-info" ng-click="insertDataNon()" value="{{btnName}}">
+</form> 
+</div>
+
+
+<div class="col-sm-6" ng-controller="inventoryController" ng-init="displayDataDrink()">
+<p>Drinks</p>
+<div style="height:30%;overflow:auto;">
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		
+		<tr ng-repeat="x in names track by $index">
+			<td>{{x.name}}</td>
+			<td>{{x.quantity}}</td>
+			<td><button ng-click="updateDataDrink(x.id, x.name, x.quantity)" class="btn btn-info btn-xs">Update</button></td>
+			<td><button ng-click="deleteDataDrink(x.id)" class="btn btn-danger btn-xs">Delete</button></td>
+		</tr>
+	</table>
+</div>
+<form>
+	Name: <input type="text" ng-model="name" name="Name">
+	Quantity: <input type="text" ng-model="quantity" name="Quantity">
+	<input type="hidden" ng-model="id" />
+	<input type="Submit" name="btnInsert" class="btn btn-info" ng-click="insertDataDrink()" value="{{btnName}}">
+</form> 
+</div>
+
+
+<div class="col-sm-6" ng-controller="inventoryController" ng-init="displayDataUtensil()">
+<p>Utensils</p>
+<div style="height:30%;overflow:auto;">
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		
+		<tr ng-repeat="x in names track by $index">
+			<td>{{x.name}}</td>
+			<td>{{x.quantity}}</td>
+			<td><button ng-click="updateDataUtensil(x.id, x.name, x.quantity)" class="btn btn-info btn-xs">Update</button></td>
+			<td><button ng-click="deleteDataUtensil(x.id)" class="btn btn-danger btn-xs">Delete</button></td>
+		</tr>
+	</table>
+</div>
+<form>
+	Name: <input type="text" ng-model="name" name="Name">
+	Quantity: <input type="text" ng-model="quantity" name="Quantity">
+	<input type="hidden" ng-model="id" />
+	<input type="Submit" name="btnInsert" class="btn btn-info" ng-click="insertDataUtensil()" value="{{btnName}}">
+</form> 
+</div>
+
+</div>
