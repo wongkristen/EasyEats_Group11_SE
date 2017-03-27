@@ -1,31 +1,77 @@
 <base href="http://demos.telerik.com/kendo-ui/calendar/index">
-    <style>html { font-size: 14px; font-family: Arial, Helvetica, sans-serif; }</style>
+<style>
+html
+{
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+.empty{
+    background-color: #fc432c;
+    color:white;
+  }
+  .covered{
+    color: black;
+    background-color:#d2fefd ;
+  }
+
+</style>
     <title></title>
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.common-material.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.material.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.material.mobile.min.css" />
-
     <script src="https://kendo.cdn.telerik.com/2017.1.223/js/jquery.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.1.223/js/kendo.all.min.js"></script>
 
 
-        <div id="example" style="height:350px;">
+        <div id="kendo" style="height:450px;">
 				<div class="demo-section k-content" style="text-align: center;">
-             <h4>Pick a date</h4>
+             <h4>Work Shifts</h4>
              <div id="calendar"></div>
+             <script id="cell-template" type="text/x-kendo-template">
+    			<div class="#= data.value < 10 ? 'empty' : 'covered' #">
+   					#= data.value #
+  				</div>
+			 </script>
 
         </div>
             <script>
-
+           			 var today = new Date();
                     // create Calendar from div HTML element
-                   $("#calendar").kendoCalendar({
-                	   value: new Date(2000, 10, 1),
-                       dates: [
-                           new Date(2000, 10, 10, 10, 0, 0),
-                           new Date(2000, 10, 10, 30, 0)
-                       ] //can manipulate month template depending on this array.
+                    $("#calendar").kendoCalendar({
+
+                	   value: today,
+                	   depth: "year",
+
+                	   footer: "Today is #: kendo.toString(data,'d') #",
+                	   max: new Date((today.getFullYear()+1), today.getMonth(), today.getDate()),
+                	   min: new Date(2015, 03, 26),
+
+                	   change: function() {
+                           var value = this.value();
+                            //value is the selected date in the calendar
+                       },
+
+
+
+                	   //each person adds an 4 to the color of the day
+                	   month: {
+                		   content: $("#cell-template").html()
+                	   }
+                		   //can only make reservations through the calender year
+                		/*disableDates: function (date) {
+        					var disabled =
+        					if (date && disabled.indexOf(date.getDate()) > -1 ) {
+            					return true;
+       						 }	else {
+            					return false;
+        					}
+                		}
+        					*/
+					//	footer: kendo.template($("#footer-template").html()))),
+
 					});
 
-
+// disableDates: ["we", "th"]
             </script>
+
         </div>
