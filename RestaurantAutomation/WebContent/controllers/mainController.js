@@ -7,4 +7,8 @@ app.controller("MainController", function ($scope, $state) {
 	$scope.goToInventory = function() {
 		$state.go("inventoryManager");
 	}
+	
+	$scope.goToInventory = function() {
+		$state.go("inventoryManager");
+	}
 })
