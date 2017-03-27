@@ -20,4 +20,10 @@ app.config(function($stateProvider, $urlRouterProvider){
         	controller: "inventoryController",
         	templateUrl: "views/inventoryManager.html"
         })
+        
+        .state("managerHome", {
+        	url:"/managerHome",
+        	controller: "",
+        	templateUrl: "views/managerHome.html"
+        })
 })

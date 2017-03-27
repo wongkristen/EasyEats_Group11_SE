@@ -1,0 +1,83 @@
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'work_scheduler')">work_scheduler</button>
+  <button class="tablinks" onclick="openCity(event, 'database')">database</button>
+  <button class="tablinks" onclick="openCity(event, 'stats')">stats</button>
+</div>
+
+<div id="work_scheduler" class="tabcontent" style="height:450px;">
+  <object name="foo1" type="text/html" data="kendo.html" style="height:350px;"></object>
+</div>
+
+<div id="database" class="tabcontent">
+  <object name="foo2" type="text/html" data="inventoryManager.html"></object>
+</div>
+
+<div id="stats" class="tabcontent">
+  <object name="foo3" type="text/html" data="application.html"></object>
+</div>
+
+<style>
+#foo1{
+height: 100%;
+}
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+</style>
+
+<style>
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+</style>
+
+<style>
+div.tab button:hover {
+    background-color: #ddd;
+}
+</style>
+
+<style>
+div.tab button.active {
+    background-color: #ccc;
+}
+</style>
+
+<style>
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</script>

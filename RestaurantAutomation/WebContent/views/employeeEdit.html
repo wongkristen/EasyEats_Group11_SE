@@ -1,0 +1,39 @@
+<div ng-controller="MainController">
+<h2 id="hello">Hello Manager</h2>
+<button id="hello" ng-click="goToInventory()">Inventory</button>
+<button id="hello" ng-click="goToEmployeeEdit()">Employees</button>
+</div>
+
+<div>
+
+<div class="col-sm-6" ng-controller="employeeController" ng-init="displayData()">
+<p>Perishables</p>
+<div style="height:30%;overflow:auto;">
+	<table class="table table-bordered">
+		<tr>
+			<th>Name</th>
+			<th>Role</th>
+			<th>Username</th>
+			<th>Password</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		
+		<tr ng-repeat="x in names track by $index">
+			<td>{{x.name}}</td>
+			<td>{{x.Role}}</td>
+			<td><button ng-click="updateData(x.id, x.name, x.quantity)" class="btn btn-info btn-xs">Update</button></td>
+			<td><button ng-click="deleteData(x.id)" class="btn btn-danger btn-xs">Delete</button></td>
+		</tr>
+	</table>
+</div>
+<form>
+	Name: <input type="text" ng-model="name" name="Name">
+	Quantity: <input type="text" ng-model="quantity" name="Quantity">
+	<input type="hidden" ng-model="id" />
+	<input type="Submit" name="btnInsert" class="btn btn-info" ng-click="insertData()" value="{{btnName}}">
+</form> 
+</div>
+
+
+</div>
