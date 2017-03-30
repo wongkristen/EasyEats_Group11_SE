@@ -29,12 +29,14 @@ public class OrderActivity extends AppCompatActivity {
         btnAdd = (Button) findViewById(R.id.button2);
 
 
-
+        // Receive transition
         Intent intent = getIntent();
 
+        // Receive transition
         final ListView listview = (ListView) findViewById(R.id.listView1);
         updateList(listview);
 
+        // Button to create database entries
         btnAdd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -49,6 +51,8 @@ public class OrderActivity extends AppCompatActivity {
                 updateList(listview);
             }
         });
+
+        // Clicking on order queue item will prompt confirmation and remove from database
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, final long id) {
@@ -79,10 +83,13 @@ public class OrderActivity extends AppCompatActivity {
 
     }// end on create
 
+    // Function to add database entries
     public void AddData(String newEntry) {
         boolean insertData = myDB.addData(newEntry);
 
     }
+
+    // Function to update list when adding/deleting values
     public void updateList(ListView listview){
         final ArrayList<String> theList = new ArrayList<>();
         final Cursor data = myDB.getListContents();
@@ -92,10 +99,14 @@ public class OrderActivity extends AppCompatActivity {
             listview.setAdapter(listAdapter);
         }
     }
+
+    // Transistion to ingredients activity
     public void ingredient(View view){
         Intent intent = new Intent(this, ListItemDetail.class);
         startActivity(intent);
     }
+
+    // Transistion to problem activity
     public void problem(View view) {
         Intent intent = new Intent(this, Problem.class);
         startActivity(intent);

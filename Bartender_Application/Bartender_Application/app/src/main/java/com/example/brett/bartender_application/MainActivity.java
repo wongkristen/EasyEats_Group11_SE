@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    // Move to main working page
     public void sendMessage(View view) {
         Intent intent = new Intent(this, OrderActivity.class);
         startActivity(intent);
