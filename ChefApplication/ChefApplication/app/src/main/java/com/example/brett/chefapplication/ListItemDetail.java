@@ -26,10 +26,13 @@ public class ListItemDetail extends AppCompatActivity {
         setContentView(R.layout.activity_listitem);
 
         myDB1 = new DBHandler(this);
+
+        // Receive intent
         Intent intent = getIntent();
 
         final ListView listview = (ListView) findViewById(R.id.listView2);
 
+        // Functionality for menu system
         listview.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, final long id) {
@@ -65,6 +68,7 @@ public class ListItemDetail extends AppCompatActivity {
     }// on create
 
 
+    // Function to prompt confirmation of ingredient delete
     public void delete(String name, String call){
         final String set = name;
         AlertDialog.Builder adb = new AlertDialog.Builder(ListItemDetail.this);
@@ -79,6 +83,8 @@ public class ListItemDetail extends AppCompatActivity {
         });
         adb.show();
     }
+
+    // Function to delete value from database
     public void delete_db(String name){
         Cursor data = myDB1.getItemID(name);
         int itemID = -1;

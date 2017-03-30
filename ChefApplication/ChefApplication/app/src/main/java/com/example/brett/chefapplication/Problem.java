@@ -20,6 +20,7 @@ public class Problem extends AppCompatActivity {
 
         btnNotify = (Button) findViewById(R.id.button5);
 
+        // Notify button
         btnNotify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

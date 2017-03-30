@@ -16,6 +16,8 @@ public class WelcomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
     }
+
+    // Move to main working page
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         startActivity(intent);
