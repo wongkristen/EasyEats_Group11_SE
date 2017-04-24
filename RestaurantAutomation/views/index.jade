@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to our test
+
+    // Wrapper
+    #wrapper
+
+        // USER LIST
+        h2 User List
+        #workShifts
+            table
+                thead
+                    th UserName
+                    th Day
+                    th Start
+                    th End
+                    th Delete?
+                tbody
+        // /USER LIST
+         // ADD USER
+        h2 Add User
+        #addUser
+            fieldset
+                input#inputUserName(type='text', placeholder='Employees username')
+                br
+                input#inputUserDay(type='text', placeholder='Day')
+                br
+                input#inputUserStart(type='text', placeholder='Start time')
+                br
+                input#inputUserEnd(type='text', placeholder='End time')
+                br
+                button#btnAddUser Add User
+        // /ADD USER
+    // /WRAPPER
